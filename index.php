@@ -36,6 +36,169 @@
             line-height: 1.6;
         }
 
+        /* Promo Banner Styles */
+        .promo-banner {
+            background: linear-gradient(135deg, #0062E6 0%, #33AEFF 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px;
+            width: 100vw;
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            box-sizing: border-box;
+        }
+
+        .promo-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .promo-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            line-height: 1.2;
+        }
+
+        .promo-desc {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .promo-btn {
+            background: white;
+            border: none;
+            color: #0062E6;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .promo-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .banner-robot {
+            position: absolute;
+            right: 5%;
+            bottom: -20px;
+            width: 400px;
+            height: auto;
+            transform: rotate(-10deg);
+            filter: drop-shadow(-20px 20px 30px rgba(0,0,0,0.5));
+            z-index: 1;
+            opacity: 0.9;
+            pointer-events: none;
+        }
+
+        .promo-bg-decoration {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+            z-index: 0;
+        }
+
+        /* Specific override for when .section class is added to promo-banner */
+        .promo-banner.section {
+            max-width: none !important;
+            margin-left: calc(-50vw + 50%) !important;
+            margin-right: calc(-50vw + 50%) !important;
+            padding: 5rem 2rem !important;
+            width: 100vw !important;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 968px) {
+            .promo-banner {
+                padding: 4rem 1.5rem;
+                text-align: left;
+                justify-content: flex-start;
+            }
+
+            .promo-content {
+                margin: 0;
+                max-width: 60%;
+            }
+            
+            .promo-desc {
+                margin-left: 0;
+            }
+
+            .banner-robot {
+                width: 300px;
+                right: -50px;
+                opacity: 0.8;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .promo-banner {
+                padding: 3rem 1.5rem;
+                flex-direction: column;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .promo-content {
+                max-width: 100%;
+                z-index: 3;
+            }
+
+            .promo-title {
+                font-size: 1.8rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .promo-desc {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .promo-btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+
+            .banner-robot {
+                position: relative;
+                width: 250px;
+                right: auto;
+                bottom: auto;
+                margin-top: 2rem;
+                transform: rotate(-5deg);
+                opacity: 1;
+                filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.4));
+            }
+        }
+
         /* Header Navigation */
         .navbar {
             position: fixed;
@@ -1074,76 +1237,20 @@
     </section>
 
     <!-- Robotics Promo Banner -->
-    <section class="promo-banner" style="
-        background: linear-gradient(135deg, #0062E6 0%, #33AEFF 100%);
-        padding: 5rem 2rem;
-        text-align: center;
-        color: white;
-        position: relative;
-        overflow: hidden;
-    ">
-        <div class="promo-content" style="
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        ">
-            <h2 style="
-                font-family: 'Space Mono', monospace;
-                font-size: 2.5rem;
-                margin-bottom: 1rem;
-                color: #ffffff;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            ">Robotics Mastery Course</h2>
-            <p style="
-                font-size: 1.2rem;
-                margin-bottom: 2.5rem;
-                color: rgba(255, 255, 255, 0.9);
-                line-height: 1.6;
-            ">Unlock the future with hands-on learning in Arduino, electronics, and coding. Designed for beginners and enthusiasts alike.</p>
-            <a href="reg/index.html" class="btn btn-primary" style="
-                background: white;
-                border: none;
-                color: #0062E6;
-                padding: 1rem 3rem;
-                font-size: 1.1rem;
-                font-weight: 700;
-                text-decoration: none;
-                transition: all 0.3s ease;
-                display: inline-block;
-                border-radius: 50px;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)'">
+    <section class="promo-banner section">
+        <div class="promo-content">
+            <h2 class="promo-title">Robotics Mastery Course</h2>
+            <p class="promo-desc">Unlock the future with hands-on learning in Arduino, electronics, and coding. Designed for beginners and enthusiasts alike.</p>
+            <a href="reg/index.html" class="promo-btn">
                 Enroll Now <span style="margin-left: 8px;">→</span>
             </a>
         </div>
         
         <!-- Robot Car Image -->
-        <img src="assest/images/robot_car_banner.png" alt="Robot Car" style="
-            position: absolute;
-            right: 0%;
-            bottom: -20px;
-            width: 400px;
-            height: auto;
-            transform: rotate(-10deg);
-            filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.2));
-            z-index: 1;
-            opacity: 0.9;
-        " class="banner-robot">
+        <img src="assest/images/robot_car_banner.png" alt="Robot Car" class="banner-robot">
 
         <!-- Tech Background Decoration -->
-        <div style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
-                              radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
-            z-index: 0;
-        "></div>
+        <div class="promo-bg-decoration"></div>
     </section>
 
     <!-- Institutes Section -->
