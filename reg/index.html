@@ -785,6 +785,30 @@
             font-size: 0.85rem;
             color: var(--gray);
         }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--primary);
+        }
     </style>
 </head>
 
@@ -793,6 +817,14 @@
 
     <!-- Hero Header -->
     <header>
+        <a href="../index.php" class="back-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Back to Home
+        </a>
         <div class="hero-content">
             <div class="hero-badge">🤖 Next Generation Learning</div>
             <h1>Master <span class="highlight">Robotics</span><br>Build the Future</h1>

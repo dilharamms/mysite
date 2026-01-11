@@ -129,9 +129,69 @@
         border-radius: 3px;
     }
 
-    .mobile-menu-btn.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 6px); }
     .mobile-menu-btn.active span:nth-child(2) { opacity: 0; }
     .mobile-menu-btn.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -6px); }
+
+    /* Dropdown Styles */
+    .dropdown {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 100%; /* Position right below the navbar */
+        left: 0;
+        background-color: #ffffff;
+        min-width: 220px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        padding: 0.5rem 0;
+        z-index: 1000;
+        border: 1px solid #f0f0f0;
+        margin-top: 1.2rem; /* Matches padding of navbar-container to align */
+    }
+
+    .dropdown-content::before {
+        content: '';
+        position: absolute;
+        top: -2rem;
+        left: 0;
+        width: 100%;
+        height: 2rem;
+        background: transparent;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+        animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dropdown-content a {
+        padding: 12px 20px;
+        display: block;
+        color: #333;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #f8f9fa;
+        color: #000;
+        padding-left: 25px; /* Slide effect */
+    }
+
+    .dropdown-content a::after {
+        display: none; /* Remove underline from main nav styles */
+    }
 
     /* Responsive Design */
     @media (max-width: 1024px) {
@@ -179,6 +239,33 @@
             text-align: center;
             font-size: 1.2rem;
         }
+
+        .dropdown {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .dropdown-content {
+            position: static;
+            display: none;
+            width: 100%;
+            box-shadow: none;
+            border: none;
+            background: #f8f9fa;
+            margin-top: 0;
+            padding: 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: none;
+        }
+
+        .dropdown-content a {
+            padding: 15px;
+            font-size: 1rem;
+            text-align: center;
+        }
         
         .nav-buttons {
             display: flex;
@@ -210,6 +297,13 @@
         <div class="nav-menu" id="navMenu">
             <ul class="nav-links">
                 <li><a href="index.php#home">Home</a></li>
+                
+                <li class="dropdown">
+                    <a href="#" style="cursor: default">Courses ▾</a>
+                    <div class="dropdown-content">
+                        <a href="reg/index.html">Robotics Course</a>
+                    </div>
+                </li>
                 
                 <li><a href="index.php#classes">Classes</a></li>
                 <li><a href="index.php#online">Online Classes</a></li>
