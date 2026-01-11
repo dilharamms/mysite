@@ -4,6 +4,19 @@ include 'db_connect.php';
 $message = '';
 $error = '';
 
+// Initialize variables
+$first_name = '';
+$last_name = '';
+$dob = '';
+$phone = '';
+$grade = '';
+$address = '';
+$gender = '';
+$parent_name = '';
+$parent_contact = '';
+$relationship = '';
+$email = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
     $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
@@ -105,57 +118,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="section-title">Student Details</div>
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" name="first_name" required>
+                    <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name); ?>" required>
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" name="last_name" required>
+                    <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name); ?>" required>
                 </div>
                 <div class="form-group">
                     <label>Date of Birth</label>
-                    <input type="date" name="dob" required>
+                    <input type="date" name="dob" value="<?php echo htmlspecialchars($dob); ?>" required>
                 </div>
                 <div class="form-group">
                     <label>Phone Number</label>
-                    <input type="tel" name="phone" required>
+                    <input type="tel" name="phone" value="<?php echo htmlspecialchars($phone); ?>" required>
                 </div>
                 <div class="form-group">
                     <label>Grade</label>
                     <select name="grade" required>
                         <option value="">Select Grade</option>
-                        <?php for($i=6; $i<=11; $i++) echo "<option value='$i'>Grade $i</option>"; ?>
+                        <?php for($i=6; $i<=11; $i++) {
+                            $selected = ($grade == $i) ? 'selected' : '';
+                            echo "<option value='$i' $selected>Grade $i</option>"; 
+                        } ?>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Gender</label>
                     <select name="gender" required>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
+                        <option value="Male" <?php if($gender == 'Male') echo 'selected'; ?>>Male</option>
+                        <option value="Female" <?php if($gender == 'Female') echo 'selected'; ?>>Female</option>
+                        <option value="Other" <?php if($gender == 'Other') echo 'selected'; ?>>Other</option>
                     </select>
                 </div>
                 <div class="form-group full-width">
                     <label>Address</label>
-                    <textarea name="address" rows="2" required></textarea>
+                    <textarea name="address" rows="2" required><?php echo htmlspecialchars($address); ?></textarea>
                 </div>
                 <div class="form-group full-width">
                     <label>Email (Optional)</label>
-                    <input type="email" name="email">
+                    <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
                 </div>
 
                 <!-- Parent Information -->
                 <div class="section-title">Parent/Guardian Information</div>
                 <div class="form-group">
                     <label>Parent Name</label>
-                    <input type="text" name="parent_name" required>
+                    <input type="text" name="parent_name" value="<?php echo htmlspecialchars($parent_name); ?>" required>
                 </div>
                 <div class="form-group">
                     <label>Parent Contact</label>
-                    <input type="tel" name="parent_contact" required>
+                    <input type="tel" name="parent_contact" value="<?php echo htmlspecialchars($parent_contact); ?>" required>
                 </div>
                 <div class="form-group full-width">
                     <label>Relationship to Child</label>
-                    <input type="text" name="relationship" placeholder="e.g. Father, Mother" required>
+                    <input type="text" name="relationship" placeholder="e.g. Father, Mother" value="<?php echo htmlspecialchars($relationship); ?>" required>
                 </div>
 
                 <!-- Login Credentials -->

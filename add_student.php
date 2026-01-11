@@ -11,8 +11,24 @@ $message = '';
 $error = '';
 $generated_username = '';
 
+// Initialize variables to keep form data
+$first_name = '';
+$last_name = '';
+$dob = '';
+$phone = '';
+$grade = '';
+$address = '';
+$gender = '';
+$parent_name = '';
+$parent_contact = '';
+$relationship = '';
+$email = '';
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect Student Data first to use for username generation
+    $first_name_raw = $_POST['first_name'];
+    $last_name_raw = $_POST['last_name'];
+    
     $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
     $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
     $dob = $_POST['dob'];
@@ -267,55 +283,55 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="section-title">Student Details</div>
                     <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" name="first_name" required>
+                        <input type="text" name="first_name" value="<?php echo htmlspecialchars($first_name); ?>" required>
                     </div>
                     <div class="form-group">
                         <label>Last Name</label>
-                        <input type="text" name="last_name" required>
+                        <input type="text" name="last_name" value="<?php echo htmlspecialchars($last_name); ?>" required>
                     </div>
                     <div class="form-group">
                         <label>Date of Birth</label>
-                        <input type="date" name="dob" required>
+                        <input type="date" name="dob" value="<?php echo htmlspecialchars($dob); ?>" required>
                     </div>
                     <div class="form-group">
                         <label>Phone Number</label>
-                        <input type="tel" name="phone" required>
+                        <input type="tel" name="phone" value="<?php echo htmlspecialchars($phone); ?>" required>
                     </div>
                     <div class="form-group">
                         <label>Grade</label>
-                        <input type="text" name="grade" required>
+                        <input type="text" name="grade" value="<?php echo htmlspecialchars($grade); ?>" required>
                     </div>
                     <div class="form-group full-width">
                         <label>Address</label>
-                        <textarea name="address" rows="3" required></textarea>
+                        <textarea name="address" rows="3" required><?php echo htmlspecialchars($address); ?></textarea>
                     </div>
                     <div class="form-group">
                         <label>Gender</label>
                         <select name="gender" required>
                             <option value="">Select Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
+                            <option value="Male" <?php if($gender == 'Male') echo 'selected'; ?>>Male</option>
+                            <option value="Female" <?php if($gender == 'Female') echo 'selected'; ?>>Female</option>
+                            <option value="Other" <?php if($gender == 'Other') echo 'selected'; ?>>Other</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Email (Optional)</label>
-                        <input type="email" name="email">
+                        <input type="email" name="email" value="<?php echo htmlspecialchars($email); ?>">
                     </div>
 
                     <!-- Parent Information -->
                     <div class="section-title">Parent/Guardian Information</div>
                     <div class="form-group">
                         <label>Parent Name</label>
-                        <input type="text" name="parent_name" required>
+                        <input type="text" name="parent_name" value="<?php echo htmlspecialchars($parent_name); ?>" required>
                     </div>
                     <div class="form-group">
                         <label>Parent Contact</label>
-                        <input type="tel" name="parent_contact" required>
+                        <input type="tel" name="parent_contact" value="<?php echo htmlspecialchars($parent_contact); ?>" required>
                     </div>
                     <div class="form-group full-width">
                         <label>Relationship to Child</label>
-                        <input type="text" name="relationship" placeholder="e.g. Father, Mother, Guardian" required>
+                        <input type="text" name="relationship" placeholder="e.g. Father, Mother, Guardian" value="<?php echo htmlspecialchars($relationship); ?>" required>
                     </div>
 
                     <!-- Login Credentials -->
