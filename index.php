@@ -1075,8 +1075,8 @@
 
     <!-- Robotics Promo Banner -->
     <section class="promo-banner" style="
-        background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
-        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #0062E6 0%, #33AEFF 100%);
+        padding: 5rem 2rem;
         text-align: center;
         color: white;
         position: relative;
@@ -1092,32 +1092,47 @@
                 font-family: 'Space Mono', monospace;
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
-                color: #64ffda;
+                color: #ffffff;
                 text-transform: uppercase;
                 letter-spacing: 2px;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
             ">Robotics Mastery Course</h2>
             <p style="
                 font-size: 1.2rem;
-                margin-bottom: 2rem;
-                color: #8892b0;
+                margin-bottom: 2.5rem;
+                color: rgba(255, 255, 255, 0.9);
                 line-height: 1.6;
             ">Unlock the future with hands-on learning in Arduino, electronics, and coding. Designed for beginners and enthusiasts alike.</p>
             <a href="reg/index.html" class="btn btn-primary" style="
-                background: transparent;
-                border: 2px solid #64ffda;
-                color: #64ffda;
-                padding: 1rem 2.5rem;
+                background: white;
+                border: none;
+                color: #0062E6;
+                padding: 1rem 3rem;
                 font-size: 1.1rem;
+                font-weight: 700;
                 text-decoration: none;
                 transition: all 0.3s ease;
                 display: inline-block;
-                border-radius: 4px;
-                font-family: 'Space Mono', monospace;
-            " onmouseover="this.style.background='#64ffda'; this.style.color='#0a192f'" onmouseout="this.style.background='transparent'; this.style.color='#64ffda'">
+                border-radius: 50px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.2)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(0,0,0,0.1)'">
                 Enroll Now <span style="margin-left: 8px;">→</span>
             </a>
         </div>
         
+        <!-- Robot Car Image -->
+        <img src="assest/images/robot_car_banner.png" alt="Robot Car" style="
+            position: absolute;
+            right: 0%;
+            bottom: -20px;
+            width: 400px;
+            height: auto;
+            transform: rotate(-10deg);
+            filter: drop-shadow(-10px 10px 20px rgba(0,0,0,0.2));
+            z-index: 1;
+            opacity: 0.9;
+        " class="banner-robot">
+
         <!-- Tech Background Decoration -->
         <div style="
             position: absolute;
@@ -1125,9 +1140,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: radial-gradient(circle at 10% 20%, rgba(100, 255, 218, 0.05) 0%, transparent 20%),
-                              radial-gradient(circle at 90% 80%, rgba(100, 255, 218, 0.05) 0%, transparent 20%);
-            z-index: 1;
+            background-image: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+            z-index: 0;
         "></div>
     </section>
 
