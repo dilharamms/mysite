@@ -1073,6 +1073,64 @@
         </div>
     </section>
 
+    <!-- Robotics Promo Banner -->
+    <section class="promo-banner" style="
+        background: linear-gradient(135deg, #0a192f 0%, #112240 100%);
+        padding: 4rem 2rem;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    ">
+        <div class="promo-content" style="
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        ">
+            <h2 style="
+                font-family: 'Space Mono', monospace;
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: #64ffda;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            ">Robotics Mastery Course</h2>
+            <p style="
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+                color: #8892b0;
+                line-height: 1.6;
+            ">Unlock the future with hands-on learning in Arduino, electronics, and coding. Designed for beginners and enthusiasts alike.</p>
+            <a href="reg/index.html" class="btn btn-primary" style="
+                background: transparent;
+                border: 2px solid #64ffda;
+                color: #64ffda;
+                padding: 1rem 2.5rem;
+                font-size: 1.1rem;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                display: inline-block;
+                border-radius: 4px;
+                font-family: 'Space Mono', monospace;
+            " onmouseover="this.style.background='#64ffda'; this.style.color='#0a192f'" onmouseout="this.style.background='transparent'; this.style.color='#64ffda'">
+                Enroll Now <span style="margin-left: 8px;">→</span>
+            </a>
+        </div>
+        
+        <!-- Tech Background Decoration -->
+        <div style="
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 10% 20%, rgba(100, 255, 218, 0.05) 0%, transparent 20%),
+                              radial-gradient(circle at 90% 80%, rgba(100, 255, 218, 0.05) 0%, transparent 20%);
+            z-index: 1;
+        "></div>
+    </section>
+
     <!-- Institutes Section -->
     <section class="institutes-section" id="institutes">
         <div class="section-header">
