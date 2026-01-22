@@ -24,6 +24,8 @@ function isActive($page) {
         <a href="admin_resources.php" class="nav-link <?php echo isActive('admin_resources.php'); echo isActive('admin_edit_resource.php'); ?>">Resources</a>
         <a href="admin_requests.php" class="nav-link <?php echo isActive('admin_requests.php'); ?>">Requests</a>
         <a href="admin_wall.php" class="nav-link <?php echo isActive('admin_wall.php'); ?>">Wall Requests</a>
+        <a href="admin_playground_categories.php" class="nav-link <?php echo isActive('admin_playground_categories.php'); ?>">Playground Categories</a>
+        <a href="admin_playground_games.php" class="nav-link <?php echo isActive('admin_playground_games.php'); ?>">Playground Games</a>
         <a href="admin_inbox.php" class="nav-link <?php echo isActive('admin_inbox.php'); ?>">Inbox</a>
         <a href="#" class="nav-link" onclick="openLogoutModal()">Logout</a>
     </nav>

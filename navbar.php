@@ -308,6 +308,7 @@
                 <li><a href="index.php#classes">Classes</a></li>
                 <li><a href="index.php#online">Online Classes</a></li>
                 <li><a href="index.php#store">Store</a></li>
+                <li><a href="playground.php" class="<?php echo ($current_page == 'playground.php') ? 'active' : ''; ?>">Playground</a></li>
                 <li><a href="wall.php" class="<?php echo ($current_page == 'wall.php' || $current_page == 'wall_post.php') ? 'active' : ''; ?>">Wall of Talent</a></li>
                 <li><a href="about.php" class="<?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About</a></li>
             </ul>
