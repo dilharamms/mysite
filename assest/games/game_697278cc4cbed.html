@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computer Builder Challenge - ICT Educational Game</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -49,7 +52,7 @@
             width: 100%;
             height: 100%;
             opacity: 0.4;
-            background-image: 
+            background-image:
                 repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(14, 165, 233, 0.03) 50px, rgba(14, 165, 233, 0.03) 51px),
                 repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(139, 92, 246, 0.03) 50px, rgba(139, 92, 246, 0.03) 51px);
             pointer-events: none;
@@ -76,8 +79,13 @@
         }
 
         @keyframes glow {
-            from { filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.5)); }
-            to { filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8)); }
+            from {
+                filter: drop-shadow(0 0 10px rgba(14, 165, 233, 0.5));
+            }
+
+            to {
+                filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
+            }
         }
 
         .header p {
@@ -99,8 +107,15 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Card Styles */
@@ -433,10 +448,21 @@
             font-family: 'Space Mono', monospace;
         }
 
-        .budget-value.total { color: var(--primary); }
-        .budget-value.spent { color: var(--accent); }
-        .budget-value.remaining { color: var(--success); }
-        .budget-value.overspent { color: var(--danger); }
+        .budget-value.total {
+            color: var(--primary);
+        }
+
+        .budget-value.spent {
+            color: var(--accent);
+        }
+
+        .budget-value.remaining {
+            color: var(--success);
+        }
+
+        .budget-value.overspent {
+            color: var(--danger);
+        }
 
         .budget-bar {
             width: 100%;
@@ -562,7 +588,8 @@
                 grid-template-columns: 1fr;
             }
 
-            .builder-sidebar, .budget-display {
+            .builder-sidebar,
+            .budget-display {
                 position: relative;
                 top: 0;
             }
@@ -596,9 +623,10 @@
         }
     </style>
 </head>
+
 <body>
     <div class="bg-pattern"></div>
-    
+
     <div class="header">
         <h1>💻 Computer Builder Challenge</h1>
         <p>Match the perfect computer to each user's needs and budget</p>
@@ -610,11 +638,12 @@
             <div class="card">
                 <h2>Welcome to Computer Builder Challenge!</h2>
                 <p style="text-align: center; font-size: 1.1rem; line-height: 1.8; margin: 30px 0;">
-                    In this educational game, you'll learn how to select the right computer components 
+                    In this educational game, you'll learn how to select the right computer components
                     for different types of users. Each user has unique needs, budgets, and preferences.
                     Your job is to build them the perfect computer!
                 </p>
-                <div style="background: rgba(14, 165, 233, 0.1); border-left: 4px solid var(--primary); padding: 20px; border-radius: 10px; margin: 30px 0;">
+                <div
+                    style="background: rgba(14, 165, 233, 0.1); border-left: 4px solid var(--primary); padding: 20px; border-radius: 10px; margin: 30px 0;">
                     <p style="font-size: 1rem; line-height: 1.6;">
                         <strong>Learning Objectives:</strong><br>
                         • Understand different types of computer users and their requirements<br>
@@ -636,7 +665,8 @@
                 <div class="profile-card" id="profileCard"></div>
                 <div class="button-group">
                     <button class="btn btn-secondary" onclick="generateNewUser()">🔄 Generate New User</button>
-                    <button class="btn btn-primary" onclick="goToPage('page-device-choice')">Next: Choose Device Type →</button>
+                    <button class="btn btn-primary" onclick="goToPage('page-device-choice')">Next: Choose Device Type
+                        →</button>
                 </div>
             </div>
         </div>
@@ -652,17 +682,20 @@
                     <div class="choice-card" onclick="selectDevice('desktop')">
                         <div class="choice-icon">🖥️</div>
                         <h3>Desktop PC</h3>
-                        <p>More powerful, upgradeable, better cooling, stationary setup. Best for gaming, video editing, and heavy workloads.</p>
+                        <p>More powerful, upgradeable, better cooling, stationary setup. Best for gaming, video editing,
+                            and heavy workloads.</p>
                     </div>
                     <div class="choice-card" onclick="selectDevice('laptop')">
                         <div class="choice-icon">💻</div>
                         <h3>Laptop</h3>
-                        <p>Portable, all-in-one, battery-powered, space-efficient. Best for travel, students, and mobile professionals.</p>
+                        <p>Portable, all-in-one, battery-powered, space-efficient. Best for travel, students, and mobile
+                            professionals.</p>
                     </div>
                 </div>
                 <div class="button-group">
                     <button class="btn btn-secondary" onclick="goToPage('page-profile')">← Back</button>
-                    <button class="btn btn-primary" id="deviceNextBtn" style="display: none;" onclick="goToPage('page-os-choice')">Next: Choose OS →</button>
+                    <button class="btn btn-primary" id="deviceNextBtn" style="display: none;"
+                        onclick="goToPage('page-os-choice')">Next: Choose OS →</button>
                 </div>
             </div>
         </div>
@@ -678,22 +711,26 @@
                     <div class="choice-card" onclick="selectOS('windows')">
                         <div class="choice-icon">🪟</div>
                         <h3>Windows</h3>
-                        <p>Most compatible, wide software support, gaming-friendly. Great for general use and business.</p>
+                        <p>Most compatible, wide software support, gaming-friendly. Great for general use and business.
+                        </p>
                     </div>
                     <div class="choice-card" onclick="selectOS('macos')">
                         <div class="choice-icon">🍎</div>
                         <h3>macOS (Apple)</h3>
-                        <p>Premium build quality, optimized performance, creative professional tools. Best for design and development.</p>
+                        <p>Premium build quality, optimized performance, creative professional tools. Best for design
+                            and development.</p>
                     </div>
                     <div class="choice-card" onclick="selectOS('linux')">
                         <div class="choice-icon">🐧</div>
                         <h3>Linux</h3>
-                        <p>Open-source, highly customizable, developer-friendly, free. Best for programmers and tech enthusiasts.</p>
+                        <p>Open-source, highly customizable, developer-friendly, free. Best for programmers and tech
+                            enthusiasts.</p>
                     </div>
                 </div>
                 <div class="button-group">
                     <button class="btn btn-secondary" onclick="goToPage('page-device-choice')">← Back</button>
-                    <button class="btn btn-primary" id="osNextBtn" style="display: none;" onclick="goToBuilder()">Next: Build Computer →</button>
+                    <button class="btn btn-primary" id="osNextBtn" style="display: none;" onclick="goToBuilder()">Next:
+                        Build Computer →</button>
                 </div>
             </div>
         </div>
@@ -701,10 +738,11 @@
         <!-- Page 5: Builder -->
         <div id="page-builder" class="page">
             <div style="text-align: center; margin-bottom: 20px;">
-                <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; color: var(--primary);">Build Your Computer</h2>
+                <h2 style="font-family: 'Space Mono', monospace; font-size: 2rem; color: var(--primary);">Build Your
+                    Computer</h2>
                 <p style="opacity: 0.9;">Select components for each category. Watch your budget!</p>
             </div>
-            
+
             <div class="builder-layout">
                 <!-- Left Sidebar: Component Selection -->
                 <div class="builder-sidebar">
@@ -734,15 +772,15 @@
                     <h3>💰 Budget Tracker</h3>
                     <div class="budget-item">
                         <div class="budget-label">Total Budget</div>
-                        <div class="budget-value total" id="totalBudget">$0</div>
+                        <div class="budget-value total" id="totalBudget">Rs. 0</div>
                     </div>
                     <div class="budget-item">
                         <div class="budget-label">Spent</div>
-                        <div class="budget-value spent" id="spentBudget">$0</div>
+                        <div class="budget-value spent" id="spentBudget">Rs. 0</div>
                     </div>
                     <div class="budget-item" style="border-bottom: none;">
                         <div class="budget-label">Remaining</div>
-                        <div class="budget-value remaining" id="remainingBudget">$0</div>
+                        <div class="budget-value remaining" id="remainingBudget">Rs. 0</div>
                         <div class="budget-bar">
                             <div class="budget-bar-fill" id="budgetBarFill" style="width: 0%;"></div>
                         </div>
@@ -796,18 +834,18 @@
             totalSpent: 0
         };
 
-        // User profiles data
+        // User profiles data (budgets in Rs.)
         const professions = [
-            { name: 'Graphic Designer', needs: ['gpu', 'ram'], budget: [1500, 2500], icon: '🎨' },
-            { name: 'Video Editor', needs: ['gpu', 'ram', 'storage'], budget: [2000, 3500], icon: '🎬' },
-            { name: 'Software Developer', needs: ['cpu', 'ram'], budget: [1200, 2200], icon: '💻' },
-            { name: 'Gaming Enthusiast', needs: ['gpu', 'cpu'], budget: [1800, 3000], icon: '🎮' },
-            { name: 'Student', needs: ['balanced'], budget: [500, 1000], icon: '📚' },
-            { name: 'Office Worker', needs: ['basic'], budget: [600, 1200], icon: '📊' },
-            { name: '3D Animator', needs: ['gpu', 'cpu', 'ram'], budget: [2500, 4000], icon: '🎭' },
-            { name: 'Data Scientist', needs: ['cpu', 'ram', 'storage'], budget: [1800, 3000], icon: '📈' },
-            { name: 'Content Creator', needs: ['gpu', 'storage'], budget: [1500, 2500], icon: '📹' },
-            { name: 'Music Producer', needs: ['cpu', 'ram', 'storage'], budget: [1400, 2400], icon: '🎵' },
+            { name: 'Graphic Designer', needs: ['gpu', 'ram'], budget: [350000, 550000], icon: '🎨' },
+            { name: 'Video Editor', needs: ['gpu', 'ram', 'storage'], budget: [450000, 750000], icon: '🎬' },
+            { name: 'Software Developer', needs: ['cpu', 'ram'], budget: [280000, 480000], icon: '💻' },
+            { name: 'Gaming Enthusiast', needs: ['gpu', 'cpu'], budget: [400000, 650000], icon: '🎮' },
+            { name: 'Student', needs: ['balanced'], budget: [120000, 250000], icon: '📚' },
+            { name: 'Office Worker', needs: ['basic'], budget: [150000, 280000], icon: '📊' },
+            { name: '3D Animator', needs: ['gpu', 'cpu', 'ram'], budget: [550000, 900000], icon: '🎭' },
+            { name: 'Data Scientist', needs: ['cpu', 'ram', 'storage'], budget: [400000, 650000], icon: '📈' },
+            { name: 'Content Creator', needs: ['gpu', 'storage'], budget: [350000, 550000], icon: '📹' },
+            { name: 'Music Producer', needs: ['cpu', 'ram', 'storage'], budget: [320000, 520000], icon: '🎵' },
         ];
 
         const names = {
@@ -815,68 +853,121 @@
             female: ['Emma', 'Olivia', 'Sophia', 'Isabella', 'Mia', 'Charlotte', 'Amelia', 'Harper', 'Evelyn', 'Ava']
         };
 
-        // Component database
-        const components = {
+        // Component database - Desktop PC
+        const desktopComponents = {
             processor: [
-                { name: 'Intel Core i3-12100', price: 120, gen: '12th', specs: '4 Cores, 8 Threads, 3.3GHz', performance: 60 },
-                { name: 'Intel Core i5-13400', price: 220, gen: '13th', specs: '10 Cores, 16 Threads, 2.5GHz', performance: 75 },
-                { name: 'Intel Core i7-13700K', price: 380, gen: '13th', specs: '16 Cores, 24 Threads, 3.4GHz', performance: 90 },
-                { name: 'AMD Ryzen 5 5600X', price: 180, gen: 'Zen 3', specs: '6 Cores, 12 Threads, 3.7GHz', performance: 70 },
-                { name: 'AMD Ryzen 7 7700X', price: 350, gen: 'Zen 4', specs: '8 Cores, 16 Threads, 4.5GHz', performance: 88 },
-                { name: 'AMD Ryzen 9 7950X', price: 550, gen: 'Zen 4', specs: '16 Cores, 32 Threads, 4.5GHz', performance: 98 }
+                { name: 'Intel Core i3-12100', price: 35000, gen: '12th', specs: '4 Cores, 8 Threads, 3.3GHz', performance: 60 },
+                { name: 'Intel Core i5-13400', price: 65000, gen: '13th', specs: '10 Cores, 16 Threads, 2.5GHz', performance: 75 },
+                { name: 'Intel Core i7-13700K', price: 115000, gen: '13th', specs: '16 Cores, 24 Threads, 3.4GHz', performance: 90 },
+                { name: 'AMD Ryzen 5 5600X', price: 55000, gen: 'Zen 3', specs: '6 Cores, 12 Threads, 3.7GHz', performance: 70 },
+                { name: 'AMD Ryzen 7 7700X', price: 105000, gen: 'Zen 4', specs: '8 Cores, 16 Threads, 4.5GHz', performance: 88 },
+                { name: 'AMD Ryzen 9 7950X', price: 165000, gen: 'Zen 4', specs: '16 Cores, 32 Threads, 4.5GHz', performance: 98 }
             ],
             ram: [
-                { name: '8GB DDR4 3200MHz', price: 35, specs: '8GB, DDR4, 3200MHz', performance: 50 },
-                { name: '16GB DDR4 3600MHz', price: 65, specs: '16GB, DDR4, 3600MHz', performance: 70 },
-                { name: '32GB DDR4 3600MHz', price: 120, specs: '32GB, DDR4, 3600MHz', performance: 85 },
-                { name: '16GB DDR5 5600MHz', price: 100, specs: '16GB, DDR5, 5600MHz', performance: 80 },
-                { name: '32GB DDR5 6000MHz', price: 180, specs: '32GB, DDR5, 6000MHz', performance: 95 },
-                { name: '64GB DDR5 6400MHz', price: 350, specs: '64GB, DDR5, 6400MHz', performance: 100 }
+                { name: '8GB DDR4 3200MHz', price: 8000, specs: '8GB, DDR4, 3200MHz', performance: 50 },
+                { name: '16GB DDR4 3600MHz', price: 15000, specs: '16GB, DDR4, 3600MHz', performance: 70 },
+                { name: '32GB DDR4 3600MHz', price: 28000, specs: '32GB, DDR4, 3600MHz', performance: 85 },
+                { name: '16GB DDR5 5600MHz', price: 22000, specs: '16GB, DDR5, 5600MHz', performance: 80 },
+                { name: '32GB DDR5 6000MHz', price: 45000, specs: '32GB, DDR5, 6000MHz', performance: 95 },
+                { name: '64GB DDR5 6400MHz', price: 90000, specs: '64GB, DDR5, 6400MHz', performance: 100 }
             ],
             storage: [
-                { name: '256GB SATA SSD', price: 30, specs: '256GB, SATA, 550MB/s', performance: 50 },
-                { name: '512GB NVMe SSD', price: 55, specs: '512GB, NVMe, 3500MB/s', performance: 70 },
-                { name: '1TB NVMe SSD', price: 90, specs: '1TB, NVMe, 3500MB/s', performance: 85 },
-                { name: '2TB NVMe Gen4 SSD', price: 180, specs: '2TB, NVMe Gen4, 7000MB/s', performance: 95 },
-                { name: '4TB NVMe Gen4 SSD', price: 380, specs: '4TB, NVMe Gen4, 7000MB/s', performance: 100 },
-                { name: '1TB HDD + 512GB SSD', price: 75, specs: '1TB HDD + 512GB SSD', performance: 65 }
+                { name: '256GB SATA SSD', price: 6000, specs: '256GB, SATA, 550MB/s', performance: 50 },
+                { name: '512GB NVMe SSD', price: 12000, specs: '512GB, NVMe, 3500MB/s', performance: 70 },
+                { name: '1TB NVMe SSD', price: 22000, specs: '1TB, NVMe, 3500MB/s', performance: 85 },
+                { name: '2TB NVMe Gen4 SSD', price: 45000, specs: '2TB, NVMe Gen4, 7000MB/s', performance: 95 },
+                { name: '4TB NVMe Gen4 SSD', price: 95000, specs: '4TB, NVMe Gen4, 7000MB/s', performance: 100 },
+                { name: '1TB HDD + 512GB SSD', price: 18000, specs: '1TB HDD + 512GB SSD', performance: 65 }
             ],
             gpu: [
                 { name: 'Integrated Graphics', price: 0, specs: 'CPU Integrated', performance: 30 },
-                { name: 'NVIDIA GTX 1660 Super', price: 250, specs: '6GB GDDR6, 1408 Cores', performance: 60 },
-                { name: 'NVIDIA RTX 3060', price: 350, specs: '12GB GDDR6, Ray Tracing', performance: 75 },
-                { name: 'NVIDIA RTX 4060 Ti', price: 450, specs: '16GB GDDR6, DLSS 3', performance: 85 },
-                { name: 'NVIDIA RTX 4070', price: 600, specs: '12GB GDDR6X, DLSS 3', performance: 92 },
-                { name: 'NVIDIA RTX 4080', price: 1100, specs: '16GB GDDR6X, Ray Tracing', performance: 98 },
-                { name: 'AMD RX 6700 XT', price: 380, specs: '12GB GDDR6', performance: 78 },
-                { name: 'AMD RX 7800 XT', price: 550, specs: '16GB GDDR6', performance: 90 }
+                { name: 'NVIDIA GTX 1660 Super', price: 65000, specs: '6GB GDDR6, 1408 Cores', performance: 60 },
+                { name: 'NVIDIA RTX 3060', price: 90000, specs: '12GB GDDR6, Ray Tracing', performance: 75 },
+                { name: 'NVIDIA RTX 4060 Ti', price: 125000, specs: '16GB GDDR6, DLSS 3', performance: 85 },
+                { name: 'NVIDIA RTX 4070', price: 175000, specs: '12GB GDDR6X, DLSS 3', performance: 92 },
+                { name: 'NVIDIA RTX 4080', price: 350000, specs: '16GB GDDR6X, Ray Tracing', performance: 98 },
+                { name: 'AMD RX 6700 XT', price: 95000, specs: '12GB GDDR6', performance: 78 },
+                { name: 'AMD RX 7800 XT', price: 160000, specs: '16GB GDDR6', performance: 90 }
             ],
             motherboard: [
-                { name: 'Basic B660 Board', price: 100, specs: 'DDR4, PCIe 4.0', performance: 60 },
-                { name: 'Mid B760 Board', price: 150, specs: 'DDR5, PCIe 4.0', performance: 75 },
-                { name: 'High-end Z790 Board', price: 280, specs: 'DDR5, PCIe 5.0, WiFi', performance: 90 },
-                { name: 'AMD B550 Board', price: 120, specs: 'DDR4, PCIe 4.0', performance: 65 },
-                { name: 'AMD X670E Board', price: 250, specs: 'DDR5, PCIe 5.0, WiFi', performance: 88 }
+                { name: 'Basic B660 Board', price: 25000, specs: 'DDR4, PCIe 4.0', performance: 60 },
+                { name: 'Mid B760 Board', price: 38000, specs: 'DDR5, PCIe 4.0', performance: 75 },
+                { name: 'High-end Z790 Board', price: 72000, specs: 'DDR5, PCIe 5.0, WiFi', performance: 90 },
+                { name: 'AMD B550 Board', price: 30000, specs: 'DDR4, PCIe 4.0', performance: 65 },
+                { name: 'AMD X670E Board', price: 65000, specs: 'DDR5, PCIe 5.0, WiFi', performance: 88 }
             ],
             psu: [
-                { name: '450W Bronze PSU', price: 45, specs: '450W, 80+ Bronze', performance: 50 },
-                { name: '650W Gold PSU', price: 80, specs: '650W, 80+ Gold, Modular', performance: 75 },
-                { name: '750W Gold PSU', price: 110, specs: '750W, 80+ Gold, Full Modular', performance: 85 },
-                { name: '850W Platinum PSU', price: 150, specs: '850W, 80+ Platinum, Full Modular', performance: 95 }
+                { name: '450W Bronze PSU', price: 12000, specs: '450W, 80+ Bronze', performance: 50 },
+                { name: '650W Gold PSU', price: 22000, specs: '650W, 80+ Gold, Modular', performance: 75 },
+                { name: '750W Gold PSU', price: 30000, specs: '750W, 80+ Gold, Full Modular', performance: 85 },
+                { name: '850W Platinum PSU', price: 42000, specs: '850W, 80+ Platinum, Full Modular', performance: 95 }
             ],
             cooling: [
                 { name: 'Stock Cooler', price: 0, specs: 'Basic Air Cooling', performance: 50 },
-                { name: 'Tower Air Cooler', price: 35, specs: 'Single Fan, 150W TDP', performance: 70 },
-                { name: 'Premium Air Cooler', price: 70, specs: 'Dual Fan, 220W TDP', performance: 85 },
-                { name: '240mm AIO Liquid', price: 100, specs: '240mm Radiator', performance: 90 },
-                { name: '360mm AIO Liquid', price: 150, specs: '360mm Radiator, RGB', performance: 98 }
+                { name: 'Tower Air Cooler', price: 8000, specs: 'Single Fan, 150W TDP', performance: 70 },
+                { name: 'Premium Air Cooler', price: 18000, specs: 'Dual Fan, 220W TDP', performance: 85 },
+                { name: '240mm AIO Liquid', price: 28000, specs: '240mm Radiator', performance: 90 },
+                { name: '360mm AIO Liquid', price: 42000, specs: '360mm Radiator, RGB', performance: 98 }
             ],
-            case: [
-                { name: 'Basic ATX Case', price: 50, specs: 'ATX, 2x Fans', performance: 60 },
-                { name: 'Mid-Tower RGB Case', price: 80, specs: 'ATX, 4x RGB Fans, Glass', performance: 75 },
-                { name: 'Premium Case', price: 150, specs: 'ATX, 6x Fans, Glass, Cable Mgmt', performance: 90 }
+            pccase: [
+                { name: 'Basic ATX Case', price: 12000, specs: 'ATX, 2x Fans', performance: 60 },
+                { name: 'Mid-Tower RGB Case', price: 22000, specs: 'ATX, 4x RGB Fans, Glass', performance: 75 },
+                { name: 'Premium Case', price: 42000, specs: 'ATX, 6x Fans, Glass, Cable Mgmt', performance: 90 }
             ]
         };
+
+        // Component database - Laptop
+        const laptopComponents = {
+            processor: [
+                { name: 'Intel Core i3-1215U', price: 75000, specs: '6 Cores, 8 Threads, Low Power', performance: 55 },
+                { name: 'Intel Core i5-1335U', price: 95000, specs: '10 Cores, 12 Threads, Efficient', performance: 70 },
+                { name: 'Intel Core i7-1365U', price: 125000, specs: '10 Cores, 12 Threads, High Perf', performance: 82 },
+                { name: 'Intel Core i7-13700H', price: 165000, specs: '14 Cores, 20 Threads, Gaming', performance: 90 },
+                { name: 'AMD Ryzen 5 7530U', price: 85000, specs: '6 Cores, 12 Threads, Efficient', performance: 68 },
+                { name: 'AMD Ryzen 7 7840HS', price: 145000, specs: '8 Cores, 16 Threads, AI Ready', performance: 88 },
+                { name: 'Apple M2', price: 175000, specs: '8-Core CPU, 10-Core GPU', performance: 92 },
+                { name: 'Apple M3 Pro', price: 285000, specs: '12-Core CPU, 18-Core GPU', performance: 98 }
+            ],
+            ram: [
+                { name: '8GB LPDDR4X', price: 0, specs: '8GB Soldered, 4266MHz', performance: 50 },
+                { name: '16GB LPDDR5', price: 15000, specs: '16GB Soldered, 5200MHz', performance: 75 },
+                { name: '32GB LPDDR5', price: 35000, specs: '32GB Soldered, 5200MHz', performance: 90 },
+                { name: '16GB DDR5 Upgradeable', price: 12000, specs: '16GB, User Upgradeable', performance: 72 },
+                { name: '32GB DDR5 Upgradeable', price: 28000, specs: '32GB, User Upgradeable', performance: 88 }
+            ],
+            storage: [
+                { name: '256GB NVMe SSD', price: 0, specs: '256GB, Fast Boot', performance: 55 },
+                { name: '512GB NVMe SSD', price: 12000, specs: '512GB, Good Balance', performance: 72 },
+                { name: '1TB NVMe SSD', price: 25000, specs: '1TB, Plenty of Space', performance: 88 },
+                { name: '2TB NVMe SSD', price: 55000, specs: '2TB, Maximum Storage', performance: 98 }
+            ],
+            display: [
+                { name: '14" FHD IPS 60Hz', price: 0, specs: '1920x1080, 250 nits', performance: 55 },
+                { name: '15.6" FHD IPS 144Hz', price: 18000, specs: '1920x1080, 300 nits, Gaming', performance: 72 },
+                { name: '14" 2.8K OLED 90Hz', price: 35000, specs: '2880x1800, HDR, Vibrant', performance: 90 },
+                { name: '16" 4K IPS 120Hz', price: 45000, specs: '3840x2400, Creator Grade', performance: 95 },
+                { name: '15.6" QHD 165Hz', price: 28000, specs: '2560x1440, High Refresh', performance: 85 }
+            ],
+            gpu: [
+                { name: 'Integrated Graphics', price: 0, specs: 'CPU Integrated', performance: 35 },
+                { name: 'NVIDIA RTX 3050 Laptop', price: 25000, specs: '4GB GDDR6, Entry Gaming', performance: 60 },
+                { name: 'NVIDIA RTX 4050 Laptop', price: 45000, specs: '6GB GDDR6, DLSS 3', performance: 72 },
+                { name: 'NVIDIA RTX 4060 Laptop', price: 75000, specs: '8GB GDDR6, Ray Tracing', performance: 82 },
+                { name: 'NVIDIA RTX 4070 Laptop', price: 115000, specs: '8GB GDDR6, High-End', performance: 92 },
+                { name: 'AMD Radeon RX 7600M', price: 55000, specs: '8GB GDDR6', performance: 75 }
+            ],
+            battery: [
+                { name: '42Wh Battery', price: 0, specs: '3-4 Hours, Basic Use', performance: 45 },
+                { name: '54Wh Battery', price: 8000, specs: '5-6 Hours, All-Day Light', performance: 65 },
+                { name: '72Wh Battery', price: 18000, specs: '8-10 Hours, Road Warrior', performance: 85 },
+                { name: '99Wh Battery', price: 32000, specs: '12+ Hours, Maximum', performance: 98 }
+            ]
+        };
+
+        // Helper to get current components based on device type
+        function getComponents() {
+            return gameState.deviceType === 'laptop' ? laptopComponents : desktopComponents;
+        }
 
         // Generate random user
         function generateNewUser() {
@@ -902,7 +993,7 @@
         function displayUserProfile() {
             const profile = gameState.user;
             const avatar = profile.name.charAt(0).toUpperCase();
-            
+
             const html = `
                 <div class="profile-avatar">${avatar}</div>
                 <div class="profile-info">
@@ -916,7 +1007,7 @@
                     </div>
                     <div class="profile-info-row">
                         <div class="profile-tag" style="background: rgba(245, 158, 11, 0.2); border-color: var(--accent);">
-                            <strong>Budget:</strong> $${profile.budget.toLocaleString()}
+                            <strong>Budget:</strong> Rs. ${profile.budget.toLocaleString()}
                         </div>
                     </div>
                     <p style="margin-top: 15px; font-size: 0.95rem; opacity: 0.8; line-height: 1.6;">
@@ -924,7 +1015,7 @@
                     </p>
                 </div>
             `;
-            
+
             document.getElementById('profileCard').innerHTML = html;
         }
 
@@ -984,18 +1075,21 @@
             // Update device image
             const deviceIcon = gameState.deviceType === 'desktop' ? '🖥️' : '💻';
             document.getElementById('deviceImage').textContent = deviceIcon;
-            document.getElementById('deviceTypeLabel').textContent = 
+            document.getElementById('deviceTypeLabel').textContent =
                 gameState.deviceType === 'desktop' ? 'Desktop PC' : 'Laptop';
 
             // Update budget display
-            document.getElementById('totalBudget').textContent = `$${gameState.user.budget.toLocaleString()}`;
-            
+            document.getElementById('totalBudget').textContent = `Rs. ${gameState.user.budget.toLocaleString()}`;
+
             // Initialize selected components
             gameState.selectedComponents = {};
-            
-            // Create category tabs
-            const categories = ['processor', 'ram', 'storage', 'gpu', 'motherboard', 'psu', 'cooling', 'case'];
-            const categoryLabels = {
+
+            // Get categories based on device type
+            const components = getComponents();
+            const categories = Object.keys(components);
+
+            // Category labels for desktop
+            const desktopLabels = {
                 processor: '🔲 CPU',
                 ram: '💾 RAM',
                 storage: '💿 Storage',
@@ -1003,44 +1097,61 @@
                 motherboard: '🔧 Motherboard',
                 psu: '⚡ PSU',
                 cooling: '❄️ Cooling',
-                case: '📦 Case'
+                pccase: '📦 Case'
             };
 
-            const tabsHtml = categories.map(cat => 
+            // Category labels for laptop
+            const laptopLabels = {
+                processor: '🔲 Processor',
+                ram: '💾 RAM',
+                storage: '💿 Storage',
+                display: '🖥️ Display',
+                gpu: '🎮 Graphics',
+                battery: '🔋 Battery'
+            };
+
+            const categoryLabels = gameState.deviceType === 'laptop' ? laptopLabels : desktopLabels;
+
+            const tabsHtml = categories.map(cat =>
                 `<div class="category-tab ${cat === currentCategory ? 'active' : ''}" onclick="switchCategory('${cat}')">
-                    ${categoryLabels[cat]}
+                    ${categoryLabels[cat] || cat}
                 </div>`
             ).join('');
             document.getElementById('categoryTabs').innerHTML = tabsHtml;
 
-            switchCategory('processor');
+            currentCategory = categories[0];
+            switchCategory(categories[0]);
             updateBudget();
         }
 
         function switchCategory(category) {
             currentCategory = category;
-            
+
             // Update active tab
             document.querySelectorAll('.category-tab').forEach(tab => tab.classList.remove('active'));
             event?.target?.classList?.add('active');
-            
+
+            // Get components for current device type
+            const components = getComponents();
+
             // Display components for this category
             const componentsHtml = components[category].map((comp, index) => `
                 <div class="component-option ${gameState.selectedComponents[category]?.name === comp.name ? 'selected' : ''}" 
                      onclick="selectComponent('${category}', ${index})">
                     <div class="component-name">${comp.name}</div>
-                    <div class="component-price">$${comp.price}</div>
+                    <div class="component-price">Rs. ${comp.price.toLocaleString()}</div>
                     <div class="component-specs">${comp.specs}</div>
                 </div>
             `).join('');
-            
+
             document.getElementById('componentOptions').innerHTML = componentsHtml;
         }
 
         function selectComponent(category, index) {
+            const components = getComponents();
             const component = components[category][index];
             gameState.selectedComponents[category] = component;
-            
+
             // Update UI
             switchCategory(category);
             updateSelectedComponentsList();
@@ -1048,8 +1159,11 @@
         }
 
         function updateSelectedComponentsList() {
-            const categories = ['processor', 'ram', 'storage', 'gpu', 'motherboard', 'psu', 'cooling', 'case'];
-            const categoryLabels = {
+            const components = getComponents();
+            const categories = Object.keys(components);
+
+            // Category labels for desktop
+            const desktopLabels = {
                 processor: 'CPU',
                 ram: 'RAM',
                 storage: 'Storage',
@@ -1057,14 +1171,26 @@
                 motherboard: 'Motherboard',
                 psu: 'Power Supply',
                 cooling: 'Cooling',
-                case: 'Case'
+                pccase: 'Case'
             };
+
+            // Category labels for laptop
+            const laptopLabels = {
+                processor: 'Processor',
+                ram: 'RAM',
+                storage: 'Storage',
+                display: 'Display',
+                gpu: 'Graphics',
+                battery: 'Battery'
+            };
+
+            const categoryLabels = gameState.deviceType === 'laptop' ? laptopLabels : desktopLabels;
 
             const html = categories.map(cat => {
                 const comp = gameState.selectedComponents[cat];
                 return `
                     <div class="component-item">
-                        <span class="component-item-name">${categoryLabels[cat]}:</span>
+                        <span class="component-item-name">${categoryLabels[cat] || cat}:</span>
                         <span class="component-item-value">${comp ? comp.name : 'Not selected'}</span>
                     </div>
                 `;
@@ -1085,12 +1211,12 @@
             const remaining = total - spent;
             const percentage = Math.min((spent / total) * 100, 100);
 
-            document.getElementById('spentBudget').textContent = `$${spent.toLocaleString()}`;
-            document.getElementById('remainingBudget').textContent = `$${remaining.toLocaleString()}`;
-            
+            document.getElementById('spentBudget').textContent = `Rs. ${spent.toLocaleString()}`;
+            document.getElementById('remainingBudget').textContent = `Rs. ${remaining.toLocaleString()}`;
+
             const remainingEl = document.getElementById('remainingBudget');
             const barFill = document.getElementById('budgetBarFill');
-            
+
             if (remaining < 0) {
                 remainingEl.classList.remove('remaining');
                 remainingEl.classList.add('overspent');
@@ -1105,8 +1231,9 @@
         }
 
         function submitBuild() {
-            // Check if all components are selected
-            const requiredComponents = ['processor', 'ram', 'storage', 'gpu', 'motherboard', 'psu', 'cooling', 'case'];
+            // Check if all components are selected based on device type
+            const components = getComponents();
+            const requiredComponents = Object.keys(components);
             const missing = requiredComponents.filter(cat => !gameState.selectedComponents[cat]);
 
             if (missing.length > 0) {
@@ -1160,13 +1287,13 @@
 
             // Display results
             document.getElementById('finalScore').textContent = `${finalScore}%`;
-            
+
             let message = '';
             if (finalScore >= 90) message = '🏆 Excellent! Perfect build!';
             else if (finalScore >= 75) message = '⭐ Great job! Well balanced!';
             else if (finalScore >= 60) message = '👍 Good effort! Room for improvement.';
             else message = '📚 Keep learning! Try again.';
-            
+
             document.getElementById('scoreMessage').textContent = message;
 
             // Performance analysis
@@ -1177,9 +1304,9 @@
                 </div>
                 <div class="feedback-item">
                     <div class="feedback-icon">${performanceScore >= 80 ? '✅' : performanceScore >= 60 ? '⚠️' : '❌'}</div>
-                    <div>${performanceScore >= 80 ? 'Excellent performance for the user\'s needs!' : 
-                           performanceScore >= 60 ? 'Adequate performance, but could be better.' : 
-                           'Performance may not meet user requirements.'}</div>
+                    <div>${performanceScore >= 80 ? 'Excellent performance for the user\'s needs!' :
+                    performanceScore >= 60 ? 'Adequate performance, but could be better.' :
+                        'Performance may not meet user requirements.'}</div>
                 </div>
             `;
             document.getElementById('performanceAnalysis').innerHTML = perfHtml;
@@ -1192,14 +1319,14 @@
                 </div>
                 <div class="feedback-item">
                     <div class="feedback-icon">${spent <= budget ? '✅' : '❌'}</div>
-                    <div>${spent <= budget ? 'Within budget! Good planning.' : 
-                           `Over budget by $${(spent - budget).toLocaleString()}!`}</div>
+                    <div>${spent <= budget ? 'Within budget! Good planning.' :
+                    `Over budget by Rs. ${(spent - budget).toLocaleString()}!`}</div>
                 </div>
                 <div class="feedback-item">
                     <div class="feedback-icon">💡</div>
-                    <div>${budgetUsed > 95 ? 'Maximized budget efficiently!' : 
-                           budgetUsed > 70 ? 'Good budget utilization.' : 
-                           'Could have allocated more budget for better performance.'}</div>
+                    <div>${budgetUsed > 95 ? 'Maximized budget efficiently!' :
+                    budgetUsed > 70 ? 'Good budget utilization.' :
+                        'Could have allocated more budget for better performance.'}</div>
                 </div>
             `;
             document.getElementById('budgetAnalysis').innerHTML = budgetHtml;
@@ -1208,7 +1335,7 @@
             const summaryHtml = Object.entries(components).map(([cat, comp]) => `
                 <div class="component-item">
                     <span class="component-item-name">${cat.toUpperCase()}:</span>
-                    <span class="component-item-value">${comp.name} - $${comp.price}</span>
+                    <span class="component-item-value">${comp.name} - Rs. ${comp.price.toLocaleString()}</span>
                 </div>
             `).join('');
             document.getElementById('finalBuildSummary').innerHTML = summaryHtml;
@@ -1226,9 +1353,10 @@
         }
 
         // Initialize on load
-        window.onload = function() {
+        window.onload = function () {
             // Start at welcome page
         };
     </script>
 </body>
+
 </html>
