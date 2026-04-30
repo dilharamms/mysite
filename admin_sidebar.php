@@ -22,6 +22,7 @@ function isActive($page) {
         <a href="admin_classes.php" class="nav-link <?php echo isActive('admin_classes.php'); echo isActive('admin_edit_class.php'); ?>">Classes</a>
         <a href="admin_products.php" class="nav-link <?php echo isActive('admin_products.php'); echo isActive('admin_edit_product.php'); ?>">Store</a>
         <a href="admin_resources.php" class="nav-link <?php echo isActive('admin_resources.php'); echo isActive('admin_edit_resource.php'); ?>">Resources</a>
+        <a href="admin_papers.php" class="nav-link <?php echo isActive('admin_papers.php'); echo isActive('admin_edit_paper.php'); ?>">Paper Archive</a>
         <a href="admin_requests.php" class="nav-link <?php echo isActive('admin_requests.php'); ?>">Requests</a>
         <a href="admin_wall.php" class="nav-link <?php echo isActive('admin_wall.php'); ?>">Wall Requests</a>
         <a href="admin_playground_categories.php" class="nav-link <?php echo isActive('admin_playground_categories.php'); ?>">Playground Categories</a>
