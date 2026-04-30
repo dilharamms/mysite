@@ -124,18 +124,45 @@ function isActive($page) {
         line-height: 1;
     }
 
+    /* Global Body and Main Content Scroll Reset for Admin Panel */
+    body {
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .main-content {
+        height: 100vh;
+        overflow-y: auto;
+    }
+
     /* Sidebar Base Styles */
     .sidebar {
         width: 250px;
         background: #0F172A;
         color: white;
-        min-height: 100vh;
+        height: 100vh;
+        overflow-y: auto;
         padding: 2rem;
         position: fixed;
         left: 0;
         top: 0;
         z-index: 1000;
         transition: transform 0.3s ease;
+    }
+    
+    /* Custom Scrollbar for Sidebar */
+    .sidebar::-webkit-scrollbar {
+        width: 6px;
+    }
+    .sidebar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+    }
+    .sidebar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+    }
+    .sidebar::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.3);
     }
     
     .nav-link {
