@@ -23,22 +23,27 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#classes">Classes</a></li>
-                    <li><a href="#online">Online Classes</a></li>
-                    <li><a href="#store">Store</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
+                    <?php
+                    if (!isset($conn)) include_once 'db_connect.php';
+                    $fq_sql = "SELECT * FROM menu_links WHERE position = 'footer_quick_links' AND is_visible = 1 ORDER BY order_index ASC";
+                    $fq_res = $conn->query($fq_sql);
+                    while($fq = $fq_res->fetch_assoc()) {
+                        echo '<li><a href="' . htmlspecialchars($fq['url']) . '">' . htmlspecialchars($fq['name']) . '</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
             <div class="footer-section">
                 <h4>Classes</h4>
                 <ul class="footer-links">
-                    <li><a href="class_details.php?grade=6">Grade 6 ICT</a></li>
-                    <li><a href="class_details.php?grade=7">Grade 7 ICT</a></li>
-                    <li><a href="class_details.php?grade=8">Grade 8 ICT</a></li>
-                    <li><a href="class_details.php?grade=9">Grade 9 ICT</a></li>
-                    <li><a href="class_details.php?grade=10">Grade 10 ICT</a></li>
-                    <li><a href="class_details.php?grade=11">Grade 11 ICT</a></li>
+                    <?php
+                    if (!isset($conn)) include_once 'db_connect.php';
+                    $fc_sql = "SELECT * FROM menu_links WHERE position = 'footer_classes' AND is_visible = 1 ORDER BY order_index ASC";
+                    $fc_res = $conn->query($fc_sql);
+                    while($fc = $fc_res->fetch_assoc()) {
+                        echo '<li><a href="' . htmlspecialchars($fc['url']) . '">' . htmlspecialchars($fc['name']) . '</a></li>';
+                    }
+                    ?>
                 </ul>
             </div>
             <div class="footer-section">

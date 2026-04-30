@@ -65,7 +65,7 @@
         transition: width 0.3s ease;
     }
 
-    .nav-links a:hover::after, .nav-links a.active::after {
+    .nav-links a:hover::after {
         width: 100%;
     }
     
@@ -296,21 +296,37 @@
 
         <div class="nav-menu" id="navMenu">
             <ul class="nav-links">
-                <li><a href="index.php#home">Home</a></li>
+                <?php
+                if (!isset($conn)) {
+                    include_once 'db_connect.php';
+                }
                 
-                <li class="dropdown">
-                    <a href="#" style="cursor: default">Courses ▾</a>
-                    <div class="dropdown-content">
-                        <a href="reg/index.html">Robotics Course</a>
-                    </div>
-                </li>
+                $nav_sql = "SELECT * FROM menu_links WHERE position = 'navbar' AND is_visible = 1 AND parent_id IS NULL ORDER BY order_index ASC";
+                $nav_res = $conn->query($nav_sql);
                 
-                <li><a href="index.php#classes">Classes</a></li>
-                <li><a href="index.php#online">Online Classes</a></li>
-                <li><a href="index.php#store">Store</a></li>
-                <li><a href="playground.php" class="<?php echo ($current_page == 'playground.php') ? 'active' : ''; ?>">Playground</a></li>
-                <li><a href="wall.php" class="<?php echo ($current_page == 'wall.php' || $current_page == 'wall_post.php') ? 'active' : ''; ?>">Wall of Talent</a></li>
-                <li><a href="about.php" class="<?php echo ($current_page == 'about.php') ? 'active' : ''; ?>">About</a></li>
+                while($item = $nav_res->fetch_assoc()) {
+                    // Check for children
+                    $child_sql = "SELECT * FROM menu_links WHERE parent_id = " . $item['id'] . " AND is_visible = 1 ORDER BY order_index ASC";
+                    $child_res = $conn->query($child_sql);
+                    
+                    if ($child_res->num_rows > 0) {
+                        echo '<li class="dropdown">';
+                        echo '<a href="#" style="cursor: default">' . htmlspecialchars($item['name']) . '</a>';
+                        echo '<div class="dropdown-content">';
+                        while($child = $child_res->fetch_assoc()) {
+                            echo '<a href="' . htmlspecialchars($child['url']) . '">' . htmlspecialchars($child['name']) . '</a>';
+                        }
+                        echo '</div></li>';
+                    } else {
+                        // Check if active
+                        $isActive = '';
+                        if ($item['url'] == $current_page || strpos($item['url'], $current_page) !== false) {
+                            $isActive = 'active';
+                        }
+                        echo '<li><a href="' . htmlspecialchars($item['url']) . '" class="' . $isActive . '">' . htmlspecialchars($item['name']) . '</a></li>';
+                    }
+                }
+                ?>
             </ul>
             <div class="nav-buttons">
                 <a href="login.php" class="btn btn-outline">Login</a>
