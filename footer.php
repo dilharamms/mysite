@@ -65,6 +65,109 @@
         <button id="backToTop" class="back-to-top">↑</button>
 
         <style>
+            /* Footer Global Styles */
+            .footer {
+                background: #F8F8FB;
+                color: #1A1A1A;
+                padding: 4rem 2rem 2rem;
+                border-top: 1px solid #E5E7EB;
+                font-family: 'Outfit', sans-serif;
+            }
+
+            .footer-content {
+                max-width: 1400px;
+                margin: 0 auto;
+                display: grid;
+                grid-template-columns: 2fr 1fr 1fr 1fr;
+                gap: 3rem;
+                margin-bottom: 3rem;
+            }
+
+            .footer-brand h3 {
+                font-size: 2rem;
+                font-weight: 800;
+                margin-bottom: 1rem;
+                font-family: 'Space Mono', monospace;
+                color: #000000;
+            }
+
+            .footer-brand p {
+                color: #6B7280;
+                line-height: 1.8;
+                margin-bottom: 1.5rem;
+            }
+
+            .social-links {
+                display: flex;
+                gap: 1rem;
+            }
+
+            .social-link {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                background: #FFFFFF;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #1A1A1A;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                border: 1px solid #E5E7EB;
+            }
+
+            .social-link:hover {
+                background: #000000;
+                color: #FFFFFF;
+                transform: translateY(-3px);
+            }
+
+            .footer-section h4 {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+                font-weight: 700;
+                color: #1A1A1A;
+            }
+
+            .footer-links {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .footer-links li {
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-links a {
+                color: #6B7280;
+                text-decoration: none;
+                transition: all 0.3s ease;
+            }
+
+            .footer-links a:hover {
+                color: #000000;
+                padding-left: 5px;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                padding-top: 2rem;
+                border-top: 1px solid #E5E7EB;
+                color: #6B7280;
+            }
+
+            @media (max-width: 1024px) {
+                .footer-content {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+
+            @media (max-width: 768px) {
+                .footer-content {
+                    grid-template-columns: 1fr;
+                }
+            }
 
 
             .back-to-top {
